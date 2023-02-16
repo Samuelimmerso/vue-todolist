@@ -25,7 +25,20 @@
 <body>
     <div id="app">
 
+        <ul class="col-8 container">
 
+            <li class="list-group-item d-flex justify-content-between align-items-start" v-for="(event,index) of todo">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold">{{event.text}}</div>
+                </div>
+                <span class="badge rounded-pill p-2 m-2" :class="(event.done) ? 'bg-success' : 'bg-danger' "
+                    @click="eventChecked(index)">{{event.content}}</span>
+
+                <span class="badge rounded-pill bg-danger" :class="(event.done) ? 'd-inline-block' : 'd-none' "
+                    @click="eventChecked(index)">x</span>
+            </li>
+
+        </ul>
 
     </div>
 </body>

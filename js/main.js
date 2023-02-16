@@ -5,19 +5,32 @@ const app = Vue.createApp({
             todo: [
                 {
                     text: "portare a spasso il cane",
-                    done: false
+                    done: false,
+                    content: "X",
+
                 },
                 {
                     text: "studiare",
-                    done: false
+                    done: true,
+                    content: 'V'
+
                 },
                 {
                     text: "aperitivo",
-                    done: false
+                    done: false,
+                    content: "X"
                 }
-
             ]
 
+        }
+    },
+
+    methods: {
+        eventChecked(i) {
+            if (!this.todo[i].done) {
+                this.todo[i].done = true;
+                this.todo[i].content = "V"
+            }
         }
     }
 });
